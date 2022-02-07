@@ -1,0 +1,87 @@
+@import 'normalize.scss';
+
+// === Mixins ===
+@mixin font-lato {
+  font-family: "Lato", sans-serif;
+}
+@mixin font-monserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+// === Mixins ===
+ 
+
+.section-outer {}
+.section-inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+// === / Common ===
+
+// === header ===
+.section-header {
+    color: white;
+    background: url('../img/surface-81OnSSXJo-I-unsplash.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    position: relative;
+
+    .section-inner {
+        height: 100vh;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(20, 39, 41, .6);
+    }
+
+
+
+    &-logo {
+        font-weight: bold;
+        font-size: 24px;
+        flex-shrink: 1;
+
+    }
+    &-content {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+    &-wrapper {
+        &__title,
+        &__subtitle{
+            text-align: center;
+        }
+        
+        &__title{
+            @include font-lato;
+            font-weight: bold;
+            font-size: 56px;
+            line-height: 60px;
+        }
+        &__subtitle{
+            @include font-monserrat;
+
+            font-size: 18px;
+            line-height: 32px;
+        }
+        &__form{
+            display: flex;
+            &-input {}
+            &-button {}
+        }
+    }
+}
+
+// === / header ===
